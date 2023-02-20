@@ -47,7 +47,7 @@ struct OtpVerificationScreen: View {
                     
                     Text("OTP Verification")
                         .foregroundColor(.black)
-                        .font(AppFonts.ceraPro_28)
+                        .font(AppFonts.ceraPro_20)
                         .fontWeight(.bold)
                  
                 }

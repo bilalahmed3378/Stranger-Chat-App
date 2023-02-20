@@ -28,7 +28,9 @@ struct AppImages {
     static let editIconPink = "editIconPink"
     static let profilePicture = "profilePicture"
     static let detailProfilePic = "detailProfilePic"
+    static let messageImage = "messageImage"
 
+    
 
     
     

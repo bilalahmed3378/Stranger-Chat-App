@@ -11,6 +11,15 @@
 		5955238C299E36D6007E5D62 /* OtpVerificationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5955238B299E36D6007E5D62 /* OtpVerificationScreen.swift */; };
 		5955238E299E4A23007E5D62 /* LetsStartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5955238D299E4A23007E5D62 /* LetsStartScreen.swift */; };
 		59552390299E589A007E5D62 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5955238F299E589A007E5D62 /* HomeScreen.swift */; };
+		595BF3B229A33F64009089A6 /* EditProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595BF3B129A33F64009089A6 /* EditProfileScreen.swift */; };
+		595BF3B429A34830009089A6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595BF3B329A34830009089A6 /* ImagePicker.swift */; };
+		595BF3B629A35297009089A6 /* MessageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595BF3B529A35297009089A6 /* MessageScreen.swift */; };
+		595BF3C029A35B7F009089A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595BF3B829A35B7F009089A6 /* Constants.swift */; };
+		595BF3C129A35B7F009089A6 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595BF3B929A35B7F009089A6 /* AppData.swift */; };
+		595BF3C329A35B7F009089A6 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595BF3BB29A35B7F009089A6 /* ShareView.swift */; };
+		595BF3C629A35B7F009089A6 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595BF3BE29A35B7F009089A6 /* AudioRecorder.swift */; };
+		595BF3C729A35B7F009089A6 /* NullEncodeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595BF3BF29A35B7F009089A6 /* NullEncodeable.swift */; };
+		595BF3C929A35C4D009089A6 /* SingleChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595BF3C829A35C4D009089A6 /* SingleChatScreen.swift */; };
 		59624349299F90370007481C /* UserProfileDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59624348299F90370007481C /* UserProfileDetailScreen.swift */; };
 		596BA51E299F503F009784A7 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596BA51D299F503F009784A7 /* ProfileScreen.swift */; };
 		596BA520299F52A5009784A7 /* SeekBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596BA51F299F52A4009784A7 /* SeekBar.swift */; };
@@ -39,6 +48,15 @@
 		5955238B299E36D6007E5D62 /* OtpVerificationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVerificationScreen.swift; sourceTree = "<group>"; };
 		5955238D299E4A23007E5D62 /* LetsStartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsStartScreen.swift; sourceTree = "<group>"; };
 		5955238F299E589A007E5D62 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		595BF3B129A33F64009089A6 /* EditProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreen.swift; sourceTree = "<group>"; };
+		595BF3B329A34830009089A6 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		595BF3B529A35297009089A6 /* MessageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageScreen.swift; sourceTree = "<group>"; };
+		595BF3B829A35B7F009089A6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		595BF3B929A35B7F009089A6 /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		595BF3BB29A35B7F009089A6 /* ShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		595BF3BE29A35B7F009089A6 /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		595BF3BF29A35B7F009089A6 /* NullEncodeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullEncodeable.swift; sourceTree = "<group>"; };
+		595BF3C829A35C4D009089A6 /* SingleChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChatScreen.swift; sourceTree = "<group>"; };
 		59624348299F90370007481C /* UserProfileDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDetailScreen.swift; sourceTree = "<group>"; };
 		596BA51D299F503F009784A7 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		596BA51F299F52A4009784A7 /* SeekBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeekBar.swift; sourceTree = "<group>"; };
@@ -74,6 +92,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		595BF3B729A35B7F009089A6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				595BF3B829A35B7F009089A6 /* Constants.swift */,
+				595BF3B929A35B7F009089A6 /* AppData.swift */,
+				595BF3BB29A35B7F009089A6 /* ShareView.swift */,
+				595BF3BE29A35B7F009089A6 /* AudioRecorder.swift */,
+				595BF3BF29A35B7F009089A6 /* NullEncodeable.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		59D9DA44299DEE2F000C2B82 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +125,7 @@
 			children = (
 				59D9DACA299DF7DE000C2B82 /* Screens */,
 				59D9DAC5299DF70D000C2B82 /* Fonts */,
+				595BF3B729A35B7F009089A6 /* Helpers */,
 				59D9DA5E299DEF17000C2B82 /* Resources */,
 				59D9DA50299DEE2F000C2B82 /* Stranger_Chat_AppApp.swift */,
 				59D9DA52299DEE2F000C2B82 /* ContentView.swift */,
@@ -115,6 +146,7 @@
 		59D9DA5E299DEF17000C2B82 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				595BF3B329A34830009089A6 /* ImagePicker.swift */,
 				596BA51F299F52A4009784A7 /* SeekBar.swift */,
 				59D9DA6D299DF46F000C2B82 /* PinkButton.swift */,
 				59D9DA5F299DEF17000C2B82 /* AppColors.swift */,
@@ -148,6 +180,9 @@
 				596BA51D299F503F009784A7 /* ProfileScreen.swift */,
 				596BA521299F5740009784A7 /* MainTabContainer.swift */,
 				59624348299F90370007481C /* UserProfileDetailScreen.swift */,
+				595BF3B129A33F64009089A6 /* EditProfileScreen.swift */,
+				595BF3B529A35297009089A6 /* MessageScreen.swift */,
+				595BF3C829A35C4D009089A6 /* SingleChatScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -232,25 +267,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				59D9DA6E299DF46F000C2B82 /* PinkButton.swift in Sources */,
+				595BF3B629A35297009089A6 /* MessageScreen.swift in Sources */,
 				59D9DA63299DEF17000C2B82 /* AppColors.swift in Sources */,
 				59D9DA64299DEF17000C2B82 /* AppImages.swift in Sources */,
+				595BF3C129A35B7F009089A6 /* AppData.swift in Sources */,
 				59D9DAD4299E18BB000C2B82 /* LoginSwicher.swift in Sources */,
 				596BA522299F5740009784A7 /* MainTabContainer.swift in Sources */,
 				59552390299E589A007E5D62 /* HomeScreen.swift in Sources */,
 				59D9DAD0299DFE5A000C2B82 /* SignupScreen.swift in Sources */,
+				595BF3B429A34830009089A6 /* ImagePicker.swift in Sources */,
 				596BA51E299F503F009784A7 /* ProfileScreen.swift in Sources */,
 				5955238E299E4A23007E5D62 /* LetsStartScreen.swift in Sources */,
 				59D9DA53299DEE2F000C2B82 /* ContentView.swift in Sources */,
 				596BA520299F52A5009784A7 /* SeekBar.swift in Sources */,
+				595BF3B229A33F64009089A6 /* EditProfileScreen.swift in Sources */,
 				59D9DAC9299DF70D000C2B82 /* AppFonts.swift in Sources */,
 				59D9DACE299DF8A8000C2B82 /* OnboardingScreen.swift in Sources */,
 				5955238C299E36D6007E5D62 /* OtpVerificationScreen.swift in Sources */,
+				595BF3C729A35B7F009089A6 /* NullEncodeable.swift in Sources */,
 				5955238A299E2CDB007E5D62 /* PhoneRegisrationScreen.swift in Sources */,
 				59624349299F90370007481C /* UserProfileDetailScreen.swift in Sources */,
 				59D9DA66299DEF17000C2B82 /* ImageViewer.swift in Sources */,
+				595BF3C629A35B7F009089A6 /* AudioRecorder.swift in Sources */,
 				59D9DAD2299E070A000C2B82 /* LogInScreen.swift in Sources */,
 				59D9DA65299DEF17000C2B82 /* Shimmer.swift in Sources */,
+				595BF3C329A35B7F009089A6 /* ShareView.swift in Sources */,
+				595BF3C929A35C4D009089A6 /* SingleChatScreen.swift in Sources */,
 				59D9DA51299DEE2F000C2B82 /* Stranger_Chat_AppApp.swift in Sources */,
+				595BF3C029A35B7F009089A6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,17 +14,25 @@ struct HomeScreen: View {
     @State var showPlacePicker : Bool = false
     
     @State var address : String = ""
+    
+    @State var showSearch : Bool = false
+
    
     @State var latitude : Double = 0.0
     @State var longitude : Double = 0.0
     
     @State var search = ""
     @State var showSheet : Bool = false
+    
+    @State var selected : Bool = false
+
     @State var seekBarValue : Int = 25
     let options = ["Male", "Female", "Other"]
       @State private var selectedOption: String = "Option 1"
     
-    let interest = ["Cat lover", "Forests", "Food", "lover", "Forests", "Food"]
+    let interest = ["Cat lover", "Forests", "Food", "lover", "cool", "ok"]
+    
+    @State var selectedItems: [String] = []
     
     var body: some View {
         ZStack{
@@ -65,31 +73,48 @@ struct HomeScreen: View {
                         .font(AppFonts.ceraPro_24)
                         .fontWeight(.bold)
                     Spacer()
+                    
+                    Button(action: {
+                        withAnimation{
+                            self.showSearch.toggle()
+                        }
+                    }, label: {
+                        Image(systemName: "magnifyingglass")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.black)
+
+                    })
+                    
                 }
                 .padding(.top,10)
                 
-                HStack{
-                    TextField("", text: self.$search)
-                    .padding()
-                    .background(.white)
-                    .cornerRadius(10)
-                    .shadow(radius: 10)
-                    
-                    Button(action: {
-                        self.showSheet = true
-                    }, label: {
-                        Image(uiImage: UIImage(named: AppImages.filterIconWhite)!)
-                            .resizable()
-                            .aspectRatio( contentMode: .fill)
-                            .frame(width: 20, height: 20)
-                            .padding()
-                            .background(RoundedRectangle(cornerRadius: 10).fill(.blue))
-                    })
-                   
-                    
+                if(self.showSearch){
+                    HStack{
+                        TextField("", text: self.$search)
+                        .padding()
+                        .background(.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 10)
+                        
+                        Button(action: {
+                            self.showSheet = true
+                        }, label: {
+                            Image(uiImage: UIImage(named: AppImages.filterIconWhite)!)
+                                .resizable()
+                                .aspectRatio( contentMode: .fill)
+                                .frame(width: 20, height: 20)
+                                .padding()
+                                .background(RoundedRectangle(cornerRadius: 10).fill(.blue))
+                        })
+                       
+                        
+                    }
+                    .padding(.top,10)
+                    .padding(.bottom,5)
                 }
-                .padding(.top,10)
-                .padding(.bottom,5)
+               
                 
                 ScrollView(.vertical, showsIndicators: false){
                     LazyVStack{
@@ -268,6 +293,16 @@ struct HomeScreen: View {
                             
                             Spacer()
                             
+                            Image(systemName: "xmark.circle")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
+                                .foregroundColor(.black)
+                                .onTapGesture{
+                                    self.showSheet = false
+                                }
+                            
+                            
                         }
                         .padding(.top,20)
                         
@@ -370,23 +405,28 @@ struct HomeScreen: View {
                                 
                                 ForEach(interest, id : \.self){interest in
 
+                                    card(text: interest, selectedItems: self.$selectedItems)
                                 
-                                Text(interest)
-//                                    .padding(10)
-//                                    .background(RoundedRectangle(cornerRadius: 20).fill(.gray.opacity(0.3)))
-//                                    .padding()
                                 
                                 
                             }
 //                        }
                         
                     }
+                    .background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.black))
                    
                     Spacer()
                     
                 }
                 .padding(.leading,20)
                 .padding(.trailing,20)
+                .onChange(of: self.selectedItems) { newValue in
+                    
+                    print(
+                        self.selectedItems
+                    )
+                    
+                }
                 
                 if(self.showPlacePicker){
                     ZStack {
@@ -470,3 +510,44 @@ class PlaceViewModel: Identifiable , ObservableObject {
     }
     
 }
+
+struct card: View{
+    
+    @State var selected = false
+    
+    @State var text: String
+    
+    @Binding var selectedItems: [String]
+    
+    var body: some View{
+        
+        
+        Text(text)
+            .foregroundColor(self.selected == true ? .white : .black)
+            .padding(10)
+            .background(RoundedRectangle(cornerRadius: 10).fill(self.selected == true ? AppColors.pinkMainColor : .gray.opacity(0.3)))
+            .padding(10)
+            .onTapGesture{
+                
+                if(self.selected){
+                    
+                    self.selected = false
+                    self.selectedItems.removeAll{$0 == text}
+                }
+                
+                else{
+                    
+                    self.selected = true
+                    self.selectedItems.append(text)
+
+                    
+                }
+                
+            }
+
+        
+        
+    }
+    
+}
+

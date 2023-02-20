@@ -21,16 +21,21 @@ struct ProfileScreen: View {
                     
                     Text("Profile")
                         .foregroundColor(.black)
-                        .font(AppFonts.ceraPro_16)
+                        .font(AppFonts.ceraPro_20)
                         .fontWeight(.bold)
                         .offset(x: 10)
                     
                     Spacer()
                     
-                    Image(uiImage: UIImage(named: AppImages.editIconPink)!)
-                        .resizable()
-                        .aspectRatio( contentMode: .fit)
-                        .frame(width: 18, height: 18)
+                    NavigationLink(destination: {
+                        EditProfileScreen()
+                    }, label: {
+                        Image(uiImage: UIImage(named: AppImages.editIconPink)!)
+                            .resizable()
+                            .aspectRatio( contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                    })
+                   
                     
                 }
                 .padding(.top,10)

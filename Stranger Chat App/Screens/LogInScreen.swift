@@ -31,7 +31,7 @@ struct LogInScreen: View {
                 HStack{
                     Text("Log in to your \nexisting account.")
                         .foregroundColor(.black)
-                        .font(AppFonts.ceraPro_28)
+                        .font(AppFonts.ceraPro_20)
                         .fontWeight(.bold)
                     Spacer()
                 }

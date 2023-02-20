@@ -19,7 +19,7 @@ struct MainTabContainer: View {
                     HomeScreen()
                 }
                 else if (self.selectedTab == 1){
-                    
+                    MessageScreen()
                 }
                 else if (self.selectedTab == 2){
                     ProfileScreen()

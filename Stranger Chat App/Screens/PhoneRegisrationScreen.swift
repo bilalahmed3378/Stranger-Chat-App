@@ -47,7 +47,7 @@ struct PhoneRegisrationScreen: View {
                 HStack{
                     Text("Mobile number verification")
                         .foregroundColor(.black)
-                        .font(AppFonts.ceraPro_28)
+                        .font(AppFonts.ceraPro_20)
                         .fontWeight(.bold)
                  
                 }

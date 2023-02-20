@@ -29,7 +29,7 @@ struct SignupScreen: View {
                     
                     Text("Sign Up")
                         .foregroundColor(.black)
-                        .font(AppFonts.ceraPro_24)
+                        .font(AppFonts.ceraPro_20)
                         .fontWeight(.bold)
                     
                     Spacer()
