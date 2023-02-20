@@ -74,7 +74,7 @@ struct LetsStartScreen: View {
 
                 
                 NavigationLink(destination: {
-                    HomeScreen()
+                    MainTabContainer()
                 }, label: {
                     PinkButton(lable: "Lets Start")
                         .padding(20)

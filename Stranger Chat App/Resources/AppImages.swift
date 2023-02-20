@@ -22,5 +22,14 @@ struct AppImages {
     static let LetsStartBackgound = "LetsStartBackgound"
     static let homeScreenImage1 = "homeScreenImage1"
     static let homeScreenImage2 = "homeScreenImage2"
+    static let HomeIconPink = "HomeIconPink"
+    static let messageIconPink = "messageIconPink"
+    static let profileIconPink = "profileIconPink"
+    static let editIconPink = "editIconPink"
+    static let profilePicture = "profilePicture"
+    static let detailProfilePic = "detailProfilePic"
 
+
+    
+    
 }

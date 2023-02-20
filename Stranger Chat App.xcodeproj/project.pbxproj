@@ -11,6 +11,10 @@
 		5955238C299E36D6007E5D62 /* OtpVerificationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5955238B299E36D6007E5D62 /* OtpVerificationScreen.swift */; };
 		5955238E299E4A23007E5D62 /* LetsStartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5955238D299E4A23007E5D62 /* LetsStartScreen.swift */; };
 		59552390299E589A007E5D62 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5955238F299E589A007E5D62 /* HomeScreen.swift */; };
+		59624349299F90370007481C /* UserProfileDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59624348299F90370007481C /* UserProfileDetailScreen.swift */; };
+		596BA51E299F503F009784A7 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596BA51D299F503F009784A7 /* ProfileScreen.swift */; };
+		596BA520299F52A5009784A7 /* SeekBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596BA51F299F52A4009784A7 /* SeekBar.swift */; };
+		596BA522299F5740009784A7 /* MainTabContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596BA521299F5740009784A7 /* MainTabContainer.swift */; };
 		59D9DA51299DEE2F000C2B82 /* Stranger_Chat_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9DA50299DEE2F000C2B82 /* Stranger_Chat_AppApp.swift */; };
 		59D9DA53299DEE2F000C2B82 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9DA52299DEE2F000C2B82 /* ContentView.swift */; };
 		59D9DA55299DEE33000C2B82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59D9DA54299DEE33000C2B82 /* Assets.xcassets */; };
@@ -35,6 +39,10 @@
 		5955238B299E36D6007E5D62 /* OtpVerificationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVerificationScreen.swift; sourceTree = "<group>"; };
 		5955238D299E4A23007E5D62 /* LetsStartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsStartScreen.swift; sourceTree = "<group>"; };
 		5955238F299E589A007E5D62 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		59624348299F90370007481C /* UserProfileDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDetailScreen.swift; sourceTree = "<group>"; };
+		596BA51D299F503F009784A7 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		596BA51F299F52A4009784A7 /* SeekBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeekBar.swift; sourceTree = "<group>"; };
+		596BA521299F5740009784A7 /* MainTabContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabContainer.swift; sourceTree = "<group>"; };
 		59D9DA4D299DEE2F000C2B82 /* Stranger Chat App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stranger Chat App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59D9DA50299DEE2F000C2B82 /* Stranger_Chat_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stranger_Chat_AppApp.swift; sourceTree = "<group>"; };
 		59D9DA52299DEE2F000C2B82 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +115,7 @@
 		59D9DA5E299DEF17000C2B82 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				596BA51F299F52A4009784A7 /* SeekBar.swift */,
 				59D9DA6D299DF46F000C2B82 /* PinkButton.swift */,
 				59D9DA5F299DEF17000C2B82 /* AppColors.swift */,
 				59D9DA60299DEF17000C2B82 /* AppImages.swift */,
@@ -136,6 +145,9 @@
 				5955238B299E36D6007E5D62 /* OtpVerificationScreen.swift */,
 				5955238D299E4A23007E5D62 /* LetsStartScreen.swift */,
 				5955238F299E589A007E5D62 /* HomeScreen.swift */,
+				596BA51D299F503F009784A7 /* ProfileScreen.swift */,
+				596BA521299F5740009784A7 /* MainTabContainer.swift */,
+				59624348299F90370007481C /* UserProfileDetailScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -223,14 +235,18 @@
 				59D9DA63299DEF17000C2B82 /* AppColors.swift in Sources */,
 				59D9DA64299DEF17000C2B82 /* AppImages.swift in Sources */,
 				59D9DAD4299E18BB000C2B82 /* LoginSwicher.swift in Sources */,
+				596BA522299F5740009784A7 /* MainTabContainer.swift in Sources */,
 				59552390299E589A007E5D62 /* HomeScreen.swift in Sources */,
 				59D9DAD0299DFE5A000C2B82 /* SignupScreen.swift in Sources */,
+				596BA51E299F503F009784A7 /* ProfileScreen.swift in Sources */,
 				5955238E299E4A23007E5D62 /* LetsStartScreen.swift in Sources */,
 				59D9DA53299DEE2F000C2B82 /* ContentView.swift in Sources */,
+				596BA520299F52A5009784A7 /* SeekBar.swift in Sources */,
 				59D9DAC9299DF70D000C2B82 /* AppFonts.swift in Sources */,
 				59D9DACE299DF8A8000C2B82 /* OnboardingScreen.swift in Sources */,
 				5955238C299E36D6007E5D62 /* OtpVerificationScreen.swift in Sources */,
 				5955238A299E2CDB007E5D62 /* PhoneRegisrationScreen.swift in Sources */,
+				59624349299F90370007481C /* UserProfileDetailScreen.swift in Sources */,
 				59D9DA66299DEF17000C2B82 /* ImageViewer.swift in Sources */,
 				59D9DAD2299E070A000C2B82 /* LogInScreen.swift in Sources */,
 				59D9DA65299DEF17000C2B82 /* Shimmer.swift in Sources */,
@@ -364,6 +380,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Stranger Chat App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Stranger\\ Chat\\ App/GooglePlaces-7.1.0/Frameworks",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Stranger-Chat-App-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -393,6 +413,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Stranger Chat App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Stranger\\ Chat\\ App/GooglePlaces-7.1.0/Frameworks",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Stranger-Chat-App-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

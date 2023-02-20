@@ -6,9 +6,26 @@
 //
 
 import SwiftUI
+import Foundation
+
 
 struct HomeScreen: View {
+    
+    @State var showPlacePicker : Bool = false
+    
+    @State var address : String = ""
+   
+    @State var latitude : Double = 0.0
+    @State var longitude : Double = 0.0
+    
     @State var search = ""
+    @State var showSheet : Bool = false
+    @State var seekBarValue : Int = 25
+    let options = ["Male", "Female", "Other"]
+      @State private var selectedOption: String = "Option 1"
+    
+    let interest = ["Cat lover", "Forests", "Food", "lover", "Forests", "Food"]
+    
     var body: some View {
         ZStack{
             AppColors.appBackGroundColor
@@ -29,10 +46,15 @@ struct HomeScreen: View {
                     
                     Spacer()
                     
-                    Image(uiImage: UIImage(named: AppImages.bellIconBlack)!)
-                        .resizable()
-                        .aspectRatio( contentMode: .fill)
-                        .frame(width: 16, height: 16)
+                 
+                        Image(uiImage: UIImage(named: AppImages.bellIconBlack)!)
+                            .resizable()
+                            .aspectRatio( contentMode: .fill)
+                            .frame(width: 16, height: 16)
+                    
+                   
+                    
+                       
                     
                 }
                 .padding(.top,10)
@@ -53,13 +75,17 @@ struct HomeScreen: View {
                     .cornerRadius(10)
                     .shadow(radius: 10)
                     
-                    
-                    Image(uiImage: UIImage(named: AppImages.filterIconWhite)!)
-                        .resizable()
-                        .aspectRatio( contentMode: .fill)
-                        .frame(width: 20, height: 20)
-                        .padding()
-                        .background(RoundedRectangle(cornerRadius: 10).fill(.blue))
+                    Button(action: {
+                        self.showSheet = true
+                    }, label: {
+                        Image(uiImage: UIImage(named: AppImages.filterIconWhite)!)
+                            .resizable()
+                            .aspectRatio( contentMode: .fill)
+                            .frame(width: 20, height: 20)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 10).fill(.blue))
+                    })
+                   
                     
                 }
                 .padding(.top,10)
@@ -69,10 +95,16 @@ struct HomeScreen: View {
                     LazyVStack{
                         ForEach(0...2, id : \.self){ index in
                             VStack{
-                                Image(uiImage: UIImage(named: AppImages.homeScreenImage1)!)
-                                    .resizable()
-                                    .aspectRatio( contentMode: .fill)
-                                    .frame( height: 340)
+                                
+                                NavigationLink(destination: {
+                                    UserProfileDetailScreen()
+                                }, label: {
+                                    Image(uiImage: UIImage(named: AppImages.homeScreenImage1)!)
+                                        .resizable()
+                                        .aspectRatio( contentMode: .fill)
+                                        .frame( height: 340)
+                                })
+                               
                                 
                                 VStack{
                                     HStack{
@@ -221,9 +253,220 @@ struct HomeScreen: View {
             .padding(.leading,20)
             .padding(.trailing,20)
             
+            
         }
         .navigationBarHidden(true)
+        .sheet(isPresented: self.$showSheet){
+            ZStack{
+                VStack{
+                    Group{
+                        HStack{
+                            Text("Apply Filter")
+                                .foregroundColor(.black)
+                                .font(AppFonts.ceraPro_18)
+                                .fontWeight(.bold)
+                            
+                            Spacer()
+                            
+                        }
+                        .padding(.top,20)
+                        
+                        HStack{
+                            Text("Age range")
+                                .foregroundColor(.black)
+                                .font(AppFonts.ceraPro_16)
+                            
+                            Spacer()
+                            
+                        }
+                        .padding(.top,20)
+                        
+                        SeekBar(lable: "", maxRange: 50, color: AppColors.pinkMainColor, value: self.$seekBarValue)
+                            .padding(.top,10)
+                        
+                        Divider()
+                            .padding(.top,20)
+                        
+                        HStack{
+                            Text("Gender")
+                                .foregroundColor(.black)
+                                .font(AppFonts.ceraPro_16)
+                            
+                            Spacer()
+                            
+                        }
+                        .padding(.top,20)
+                        
+                        VStack {
+                            Menu {
+                                ForEach(options, id: \.self) { option in
+                                    Button(option) {
+                                        selectedOption = option
+                                    }
+                                }
+                            } label: {
+                                HStack{
+                                    Text(selectedOption)
+                                        .foregroundColor(.black)
+                                        .padding(15)
+                                    
+                                    Spacer()
+                                    Image(systemName: "chevron.down.circle")
+                                        .foregroundColor(.black)
+                                        .padding(.trailing,5)
+                                }
+                                .background(RoundedRectangle(cornerRadius: 10).strokeBorder(.black))
+                            }
+                            .menuStyle(BorderlessButtonMenuStyle())
+                        }
+                    }
+                    Divider()
+                        .padding(.top,20)
+                    
+                    HStack{
+                        Text("City")
+                            .foregroundColor(.black)
+                            .font(AppFonts.ceraPro_16)
+                        
+                        Spacer()
+                        
+                    }
+                    .padding(.top,20)
+                    
+                    HStack{
+                        
+                        Text("Address")
+                            .font(AppFonts.ceraPro_14)
+                            .foregroundColor(AppColors.textColor)
+
+                        Spacer()
+                            
+                    }
+                    .padding()
+                    .background(AppColors.pinkMainColor)
+                    .cornerRadius(10)
+                    .onTapGesture{
+                        withAnimation{
+                            self.showPlacePicker = true
+                        }
+                    }
+                    
+                    Divider()
+                        .padding(.top,20)
+                    
+                    HStack{
+                        Text("Interest")
+                            .foregroundColor(.black)
+                            .font(AppFonts.ceraPro_16)
+                        
+                        Spacer()
+                        
+                    }
+                    .padding(.top,20)
+                    
+//                    ScrollView(.vertical, showsIndicators: false){
+                        
+                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()) , GridItem(.flexible())]){
+                                
+                                ForEach(interest, id : \.self){interest in
+
+                                
+                                Text(interest)
+//                                    .padding(10)
+//                                    .background(RoundedRectangle(cornerRadius: 20).fill(.gray.opacity(0.3)))
+//                                    .padding()
+                                
+                                
+                            }
+//                        }
+                        
+                    }
+                   
+                    Spacer()
+                    
+                }
+                .padding(.leading,20)
+                .padding(.trailing,20)
+                
+                if(self.showPlacePicker){
+                    ZStack {
+                        
+                        Rectangle().fill(Color.black.opacity(0.3))
+                        
+                        VStack{
+                            
+                            HStack{
+                                
+                                    
+                                
+                                Text(self.address.isEmpty ? "Address" : self.address)
+                                    .font(AppFonts.ceraPro_18)
+                                    .foregroundColor(AppColors.textColor)
+                                    .padding(.trailing,10)
+                                
+                                Spacer()
+                                
+                                Image(systemName: "xmark.circle.fill")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 20, height: 20,alignment:.center)
+                                    .foregroundColor(.black)
+                                    .onTapGesture(perform: {
+                                        withAnimation{
+                                            self.showPlacePicker = false
+                                        }
+                                    })
+                            }
+                            .padding(20)
+                            
+                          
+                            
+                            Spacer()
+                            
+                        }
+                        .background(RoundedCorners(tl: 20, tr: 20, bl: 0, br: 0).fill(Color.white))
+                        .padding(.top,200)
+                        
+                    }
+                    .onDisappear{
+    //                    print("Selected Place Address ===> \(result.address)\nSelected Place Latitude ===> \(result.latitude)\nSelected Palce Longitude ===> \(result.longitude)")
+                    }
+                }
+                
+            }
+        }
+    }
+    func locationReceived(placeViewModel: PlaceViewModel) {
+        self.address = placeViewModel.address
+        self.latitude = placeViewModel.latitude
+        self.longitude = placeViewModel.longitude
+        self.showPlacePicker.toggle()
     }
 }
 
 
+
+class PlaceViewModel: Identifiable , ObservableObject {
+    
+    let id : UUID
+    @Published var latitude : Double
+    @Published var longitude : Double
+    @Published var address : String
+    @Published var province : String
+    @Published var city : String
+    @Published var country : String
+    @Published var zipCode : String
+
+    
+    init(lat : Double , long : Double , address : String , province : String = "" , city : String = "",country : String = "" ,zipCode : String = ""){
+        self.id = UUID()
+        self.latitude = lat
+        self.longitude = long
+        self.address = address
+        self.province = province
+        self.city = city
+        self.country = country
+        self.zipCode = zipCode
+    }
+    
+}
