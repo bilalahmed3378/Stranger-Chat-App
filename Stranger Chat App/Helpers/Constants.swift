@@ -27,6 +27,19 @@ class Constants {
     static var userPhoneNumber:String = "userPhoneNumber"
     static var userDesigination : String = "userDesigination"
     static var fcmToken:String = "fcmToken"
+    
+   
+    
+    static var nickName :String = "nickName"
+    static var profileImage :String = "profileImage"
+    static var email :String = "email"
+    static var _id :String = "_id"
+
+
+    
+
+    
+
 
 
     static var isFromEditOrder:String = "isFromEditOrder"

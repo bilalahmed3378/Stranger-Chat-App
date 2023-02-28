@@ -7,9 +7,13 @@
 
 import SwiftUI
 import Foundation
+import Kingfisher
 
 
 struct HomeScreen: View {
+    
+    @StateObject var getAllUsers : GetAllUsersApi = GetAllUsersApi()
+
     
     @State var showPlacePicker : Bool = false
     
@@ -38,249 +42,310 @@ struct HomeScreen: View {
         ZStack{
             AppColors.appBackGroundColor
                 .ignoresSafeArea(.all)
-            VStack{
-                
-                //top bar
-                HStack{
-                    Image(systemName: "location.north")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 16, height: 16)
-                        .foregroundColor(.black)
-                    
-                    Text("Haripur, United States")
-                        .foregroundColor(AppColors.textColor)
-                        .font(AppFonts.ceraPro_14)
-                    
+            
+            if(self.getAllUsers.isLoading){
+
+                VStack{
+
                     Spacer()
-                    
-                 
-                        Image(uiImage: UIImage(named: AppImages.bellIconBlack)!)
-                            .resizable()
-                            .aspectRatio( contentMode: .fill)
-                            .frame(width: 16, height: 16)
-                    
-                   
-                    
-                       
-                    
+
+                    HStack{
+
+                        Spacer()
+
+                        ProgressView()
+                            .padding()
+
+
+                        Spacer()
+
+                    }
+
+
+                    Spacer()
+
                 }
-                .padding(.top,10)
+
+
+            }
+            
+            else if(self.getAllUsers.isApiCallDone && (!self.getAllUsers.isApiCallSuccessful)){
                 
-                HStack{
-                    Text("Find Friends Nearby \nFor Dating")
-                        .foregroundColor(.black)
-                        .font(AppFonts.ceraPro_24)
-                        .fontWeight(.bold)
+                VStack{
+                    
+                    
                     Spacer()
+                    
+                    Text("Unable to access internet.")
+                        .font(.system(size: 14))
+                        .foregroundColor(.black)
                     
                     Button(action: {
                         withAnimation{
-                            self.showSearch.toggle()
+                            self.getAllUsers.getAllUsers()
                         }
-                    }, label: {
-                        Image(systemName: "magnifyingglass")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                            .foregroundColor(.black)
-
-                    })
-                    
-                }
-                .padding(.top,10)
-                
-                if(self.showSearch){
-                    HStack{
-                        TextField("", text: self.$search)
-                        .padding()
-                        .background(.white)
-                        .cornerRadius(10)
-                        .shadow(radius: 10)
-                        
-                        Button(action: {
-                            self.showSheet = true
-                        }, label: {
-                            Image(uiImage: UIImage(named: AppImages.filterIconWhite)!)
-                                .resizable()
-                                .aspectRatio( contentMode: .fill)
-                                .frame(width: 20, height: 20)
-                                .padding()
-                                .background(RoundedRectangle(cornerRadius: 10).fill(.blue))
-                        })
-                       
+                    }){
+                        Text("Try Agin")
+                            .font(.system(size: 14))
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 5).fill(.blue))
                         
                     }
-                    .padding(.top,10)
-                    .padding(.bottom,5)
+                    .padding(.top,30)
+                    
+                    Spacer()
+                    
                 }
-               
+            }
+            
+            else if(self.getAllUsers.isApiCallDone && self.getAllUsers.isApiCallSuccessful){
                 
-                ScrollView(.vertical, showsIndicators: false){
-                    LazyVStack{
-                        ForEach(0...2, id : \.self){ index in
-                            VStack{
+                if(self.getAllUsers.dataRetrivedSuccessfully){
+                    VStack{
+                        
+                        //top bar
+                        HStack{
+                            Image(systemName: "location.north")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 16, height: 16)
+                                .foregroundColor(.black)
+                            
+                            Text("Haripur, United States")
+                                .foregroundColor(AppColors.textColor)
+                                .font(AppFonts.ceraPro_14)
+                            
+                            Spacer()
+                            
+                         
+                                Image(uiImage: UIImage(named: AppImages.bellIconBlack)!)
+                                    .resizable()
+                                    .aspectRatio( contentMode: .fill)
+                                    .frame(width: 16, height: 16)
+                            
+                           
+                            
+                               
+                            
+                        }
+                        .padding(.top,10)
+                        
+                        HStack{
+                            Text("Find Friends Nearby \nFor Dating")
+                                .foregroundColor(.black)
+                                .font(AppFonts.ceraPro_24)
+                                .fontWeight(.bold)
+                            Spacer()
+                            
+                            Button(action: {
+                                withAnimation{
+                                    self.showSearch.toggle()
+                                }
+                            }, label: {
+                                Image(systemName: "magnifyingglass")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 20, height: 20)
+                                    .foregroundColor(.black)
+
+                            })
+                            
+                        }
+                        .padding(.top,10)
+                        
+                        if(self.showSearch){
+                            HStack{
+                                TextField("", text: self.$search)
+                                .padding()
+                                .background(.white)
+                                .cornerRadius(10)
+                                .shadow(radius: 10)
                                 
-                                NavigationLink(destination: {
-                                    UserProfileDetailScreen()
+                                Button(action: {
+                                    self.showSheet = true
                                 }, label: {
-                                    Image(uiImage: UIImage(named: AppImages.homeScreenImage1)!)
+                                    Image(uiImage: UIImage(named: AppImages.filterIconWhite)!)
                                         .resizable()
                                         .aspectRatio( contentMode: .fill)
-                                        .frame( height: 340)
+                                        .frame(width: 20, height: 20)
+                                        .padding()
+                                        .background(RoundedRectangle(cornerRadius: 10).fill(.blue))
                                 })
                                
                                 
-                                VStack{
-                                    HStack{
-                                        Text("Janice Ramirez")
-                                            .foregroundColor(.black)
-                                            .font(AppFonts.ceraPro_16)
-                                            .fontWeight(.bold)
-                                        
-                                        Spacer()
-                                        
-                                        Text("1.5 KM")
-                                            .foregroundColor(.black)
-                                            .font(AppFonts.ceraPro_16)
-                                            .fontWeight(.bold)
-                                    }
-                                    .padding(.leading,20)
-                                    .padding(.trailing,20)
-                                    .padding(.top,10)
-                                    
-                                    HStack{
-                                        Text("NYC , United states")
-                                            .foregroundColor(AppColors.textColor)
-                                            .font(AppFonts.ceraPro_16)
-                                        
-                                        Spacer()
-                                        
-                                      
-                                    }
-                                    .padding(.leading,20)
-                                    .padding(.trailing,20)
-                                    .padding(.top,10)
-                                    .padding(.bottom,10)
-                                    
-                                    HStack{
-                                        Spacer()
-                                        
-                                        
-                                        Image(systemName: "multiply")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 20, height: 20)
-                                            .foregroundColor(.white)
-                                            .padding()
-                                            .background(Circle().fill(.black))
-                                        
-                                        Spacer()
-
-                                        Image(systemName: "heart")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 20, height: 20)
-                                            .foregroundColor(.white)
-                                            .padding()
-                                            .background(Circle().fill(AppColors.pinkMainColor))
-                                        
-                                        Spacer()
-
-                                    }
-                                    .padding(.bottom,20)
-                                    
-                                }
-                                .background(Color.white)
-                                
                             }
-                            .background(RoundedRectangle(cornerRadius: 20))
-                            .padding(.top,20)
-                            
-                            VStack{
-                                Image(uiImage: UIImage(named: AppImages.homeScreenImage2)!)
-                                    .resizable()
-                                    .aspectRatio( contentMode: .fill)
-                                    .frame( height: 340)
-                                
-                                VStack{
-                                    HStack{
-                                        Text("Janice Ramirez")
-                                            .foregroundColor(.black)
-                                            .font(AppFonts.ceraPro_16)
-                                            .fontWeight(.bold)
-                                        
-                                        Spacer()
-                                        
-                                        Text("1.5 KM")
-                                            .foregroundColor(.black)
-                                            .font(AppFonts.ceraPro_16)
-                                            .fontWeight(.bold)
-                                    }
-                                    .padding(.leading,20)
-                                    .padding(.trailing,20)
-                                    .padding(.top,10)
-                                    
-                                    HStack{
-                                        Text("NYC , United states")
-                                            .foregroundColor(AppColors.textColor)
-                                            .font(AppFonts.ceraPro_16)
-                                        
-                                        Spacer()
-                                        
-                                      
-                                    }
-                                    .padding(.leading,20)
-                                    .padding(.trailing,20)
-                                    .padding(.top,10)
-                                    .padding(.bottom,10)
-                                    
-                                    HStack{
-                                        Spacer()
-                                        
-                                        
-                                        Image(systemName: "multiply")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 20, height: 20)
-                                            .foregroundColor(.white)
-                                            .padding()
-                                            .background(Circle().fill(.black))
-                                        
-                                        Spacer()
-
-                                        Image(systemName: "heart")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 20, height: 20)
-                                            .foregroundColor(.white)
-                                            .padding()
-                                            .background(Circle().fill(AppColors.pinkMainColor))
-                                        
-                                        Spacer()
-
-                                    }
-                                    .padding(.bottom,20)
-                                    
-                                }
-                                .background( Color.white)
-                                
-                            }
-                            .background(RoundedRectangle(cornerRadius: 20))
-                            .padding(.top,20)
+                            .padding(.top,10)
+                            .padding(.bottom,5)
                         }
+                       
+                        
+                        ScrollView(.vertical, showsIndicators: false){
+                            LazyVStack{
+                                ForEach(self.getAllUsers.apiResponse!.docs.indices, id : \.self){ index in
+                                    VStack{
+                                        
+                                        NavigationLink(destination: {
+                                            UserProfileDetailScreen(user_id: self.getAllUsers.apiResponse!.docs[index]._id)
+                                        }, label: {
+                                            KFImage(URL(string: self.getAllUsers.apiResponse!.docs[index].profileImage))
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                
+                                        })
+                                        .frame(height: 340)
+
+                                       
+                                        
+                                        VStack{
+                                            HStack{
+                                                Text("\(self.getAllUsers.apiResponse!.docs[index].nickName)")
+                                                    .foregroundColor(.black)
+                                                    .font(AppFonts.ceraPro_16)
+                                                    .fontWeight(.bold)
+                                                
+                                                Spacer()
+                                                
+                                                Text("1.5 KM")
+                                                    .foregroundColor(.black)
+                                                    .font(AppFonts.ceraPro_16)
+                                                    .fontWeight(.bold)
+                                            }
+                                            .padding(.leading,20)
+                                            .padding(.trailing,20)
+                                            .padding(.top,10)
+                                            
+                                            HStack{
+                                                Text("NYC , United states")
+                                                    .foregroundColor(AppColors.textColor)
+                                                    .font(AppFonts.ceraPro_16)
+                                                
+                                                Spacer()
+                                                
+                                              
+                                            }
+                                            .padding(.leading,20)
+                                            .padding(.trailing,20)
+                                            .padding(.top,10)
+                                            .padding(.bottom,10)
+                                            
+                                            HStack{
+                                                Spacer()
+                                                
+                                                
+                                                Image(systemName: "multiply")
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(width: 20, height: 20)
+                                                    .foregroundColor(.white)
+                                                    .padding()
+                                                    .background(Circle().fill(.black))
+                                                
+                                                Spacer()
+
+                                                Image(systemName: "heart")
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(width: 20, height: 20)
+                                                    .foregroundColor(.white)
+                                                    .padding()
+                                                    .background(Circle().fill(AppColors.pinkMainColor))
+                                                
+                                                Spacer()
+
+                                            }
+                                            .padding(.bottom,20)
+                                            
+                                        }
+                                        .background(Color.white)
+                                        
+                                    }
+                                    .background(RoundedRectangle(cornerRadius: 20))
+                                    .padding(.top,20)
+                                    .frame(height: 500)
+
+                                    
+                                   
+                                }
+                            }
+                           
+                        }
+                       
+                        
                     }
-                   
+                    .padding(.leading,20)
+                    .padding(.trailing,20)
+                    .padding(.bottom,80)
                 }
-               
+                
+                else{
+                    VStack{
+                        
+                        Spacer()
+                        
+                        Text("Unable to get Users.")
+                            .font(.system(size: 14))
+                            .foregroundColor(.black)
+                        
+                        Button(action: {
+                            withAnimation{
+                                self.getAllUsers.getAllUsers()
+                            }
+                        }){
+                            Text("Try Agin")
+                                .font(.system(size: 14))
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(RoundedRectangle(cornerRadius: 5).fill(.blue))
+                            
+                        }
+                        .padding(.top,30)
+                        
+                        Spacer()
+                        
+                    }
+                }
+            }
+            
+            
+            else{
+                
+                VStack{
+                    
+                    Spacer()
+                    
+                    Text("Unable to get users.")
+                        .font(.system(size: 14))
+                        .foregroundColor(.black)
+                    
+                    Button(action: {
+                        withAnimation{
+                            self.getAllUsers.getAllUsers()
+                        }
+                    }){
+                        Text("Try Agin")
+                            .font(.system(size: 14))
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 5).fill(.blue))
+                        
+                    }
+                    .padding(.top,30)
+                    
+                    Spacer()
+                    
+                }
                 
             }
-            .padding(.leading,20)
-            .padding(.trailing,20)
+
+           
             
             
         }
         .navigationBarHidden(true)
+        .onAppear{
+            self.getAllUsers.getAllUsers()
+        }
         .sheet(isPresented: self.$showSheet){
             ZStack{
                 VStack{

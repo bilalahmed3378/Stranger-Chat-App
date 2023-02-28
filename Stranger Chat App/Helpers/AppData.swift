@@ -227,7 +227,7 @@ class AppData {
         UserDefaults.standard.removeObject(forKey: Constants.userId)
         UserDefaults.standard.removeObject(forKey: Constants.firstName)
         UserDefaults.standard.removeObject(forKey: Constants.lastName)
-//        UserDefaults.standard.removeObject(forKey: Constants.userEmail)
+        UserDefaults.standard.removeObject(forKey: Constants.userEmail)
         UserDefaults.standard.removeObject(forKey: Constants.userImage)
         UserDefaults.standard.removeObject(forKey: Constants.userPhoneNumber)
         UserDefaults.standard.removeObject(forKey: Constants.userStore)
@@ -252,14 +252,13 @@ class AppData {
         }
     }
     
-//    func saveUserDetails(employee : EmployeProfile){
-//        UserDefaults.standard.set(employee.firstname, forKey: Constants.firstName)
-//        UserDefaults.standard.set(employee.lastname, forKey: Constants.lastName)
-//        UserDefaults.standard.set(employee.email, forKey: Constants.userEmail)
-//        UserDefaults.standard.set(employee.image, forKey: Constants.userImage)
-//        UserDefaults.standard.set(employee.phone, forKey: Constants.userPhoneNumber)
-//        UserDefaults.standard.set(employee.storename, forKey: Constants.userStore)
-//    }
+    func saveUserDetails(user : LoginDocsModel){
+        UserDefaults.standard.set(user.nickName, forKey: Constants.nickName)
+        UserDefaults.standard.set(user.profileImage, forKey: Constants.profileImage)
+        UserDefaults.standard.set(user.email, forKey: Constants.userEmail)
+        UserDefaults.standard.set(user._id, forKey: Constants._id)
+
+    }
     
     func getUserFirstName()->String{
         var name = ""

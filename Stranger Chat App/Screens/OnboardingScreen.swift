@@ -8,10 +8,18 @@
 import SwiftUI
 
 struct OnboardingScreen: View {
+    @State var isLoggedIn : Bool = false
+
     var body: some View {
         ZStack{
             AppColors.appBackGroundColor
                 .ignoresSafeArea(.all)
+            
+            if(self.isLoggedIn){
+                NavigationLink(destination: MainTabContainer(), isActive: self.$isLoggedIn){
+                    EmptyView()
+                }
+            }
             
             VStack{
                 
@@ -29,7 +37,7 @@ struct OnboardingScreen: View {
                     .padding(.top,20)
                 
                 NavigationLink(destination: {
-                    LoginSwitcher(isLoginView: true)
+                    LoginSwitcher(isLoginView: false)
                 }, label: {
                     WhiteButton(lable: "Login")
                         .padding(.top,20)
@@ -47,7 +55,7 @@ struct OnboardingScreen: View {
                         .font(AppFonts.ceraPro_14)
                     
                     NavigationLink(destination: {
-                        LoginSwitcher(isLoginView: false)
+                        LoginSwitcher(isLoginView: true)
 
                     }, label: {
                         
@@ -70,6 +78,10 @@ struct OnboardingScreen: View {
             .padding(.trailing,20)
             
             
+        }
+        .onAppear{
+            self.isLoggedIn = AppData().isUserLoggedIn()
+
         }
     }
 }
