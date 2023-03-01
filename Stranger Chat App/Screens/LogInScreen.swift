@@ -13,15 +13,19 @@ struct LogInScreen: View {
     
     @State var remmberMe : Bool = true
 
+    @State var isUserLoggedIn = false
+
 
     @State var email : String = ""
     @State var password : String = ""
     
     @State var showToast : Bool = false
     @State var toastMessage : String = ""
+    
+    @State var toCreatedProfile : Bool = false
+
 
     
-    @State var isUserLoggedIn = false
 
     
     @Binding var pushToSignup : Bool
@@ -34,7 +38,11 @@ struct LogInScreen: View {
     var body: some View {
         ZStack{
             
-            NavigationLink(destination: MainTabContainer(), isActive: self.$isUserLoggedIn){
+            NavigationLink(destination: MainTabContainer(isUserLoggedIn: self.$isUserLoggedIn), isActive: self.$isUserLoggedIn){
+                EmptyView()
+            }
+            
+            NavigationLink(destination: CreateProfileScreen(), isActive: self.$toCreatedProfile){
                 EmptyView()
             }
             
@@ -118,7 +126,7 @@ struct LogInScreen: View {
                                        }
                                        
                                        
-                                       if(self.loginApi.apiResponse!.docs != nil){
+                                       if(self.loginApi.apiResponse!.docs!.profileSetup == true){
                                            
                                            AppData().setRemeberMe(rememberMe: self.remmberMe)
                                            AppData().saveUserDetails(user: self.loginApi.apiResponse!.docs!)
@@ -131,7 +139,7 @@ struct LogInScreen: View {
                                        else{
                                            
                                            withAnimation{
-//                                               self.toCreatedProfile = true
+                                               self.toCreatedProfile = true
                                                
                                            }
                                            

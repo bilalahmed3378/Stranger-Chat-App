@@ -10,13 +10,14 @@ import SwiftUI
 struct OnboardingScreen: View {
     @State var isLoggedIn : Bool = false
 
+
     var body: some View {
         ZStack{
             AppColors.appBackGroundColor
                 .ignoresSafeArea(.all)
             
             if(self.isLoggedIn){
-                NavigationLink(destination: MainTabContainer(), isActive: self.$isLoggedIn){
+                NavigationLink(destination: MainTabContainer(isUserLoggedIn: self.$isLoggedIn), isActive: self.$isLoggedIn){
                     EmptyView()
                 }
             }

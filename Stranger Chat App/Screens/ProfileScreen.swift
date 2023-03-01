@@ -14,6 +14,12 @@ struct ProfileScreen: View {
     
     @StateObject var getProfileApi = GetProfileApi()
 
+    @Binding var isUserLoggedIn : Bool
+    
+    
+    init(isUserLoggedIn : Binding<Bool>){
+        self._isUserLoggedIn = isUserLoggedIn
+    }
 
     
     var body: some View {
@@ -93,6 +99,18 @@ struct ProfileScreen: View {
                                 .offset(x: 10)
                             
                             Spacer()
+                            
+                            NavigationLink(destination: {
+                                LogoutScreen(isUserLoggedIn: self.$isUserLoggedIn)
+                            }, label: {
+                                Image(systemName: "rectangle.portrait.and.arrow.right")
+                                    .resizable()
+                                    .aspectRatio( contentMode: .fit)
+                                    .frame(width: 20, height: 20)
+                                    .foregroundColor(.red)
+                                    .padding(.trailing,5)
+                            
+                            })
                             
                             NavigationLink(destination: {
                                 EditProfileScreen()

@@ -68,3 +68,23 @@ struct BlueButton: View {
         .shadow(radius: 10)
     }
 }
+
+struct RedButton: View {
+    
+    let lable : String
+    
+    var body: some View {
+        
+        HStack{
+            Spacer()
+            Text(lable)
+                .foregroundColor(.white)
+                .font(AppFonts.ceraPro_14)
+            Spacer()
+        }
+        .padding()
+        .background(.red)
+        .cornerRadius(10)
+        .shadow(radius: 10)
+    }
+}

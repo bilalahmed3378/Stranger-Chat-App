@@ -13,6 +13,9 @@ import Kingfisher
 struct HomeScreen: View {
     
     @StateObject var getAllUsers : GetAllUsersApi = GetAllUsersApi()
+    
+    @StateObject var likeApi : LikeUnlikeApi = LikeUnlikeApi()
+
 
     
     @State var showPlacePicker : Bool = false
@@ -20,6 +23,17 @@ struct HomeScreen: View {
     @State var address : String = ""
     
     @State var showSearch : Bool = false
+    
+    @State var like : Bool = false
+
+    @State var unlike : Bool = false
+    
+    @State var likePressed : Int = 0
+
+    
+    @State var showToast : Bool = false
+    @State var toastMessage : String = ""
+
 
    
     @State var latitude : Double = 0.0
@@ -231,25 +245,116 @@ struct HomeScreen: View {
                                             
                                             HStack{
                                                 Spacer()
+                                                if(self.likePressed == 1){
+                                                    if(self.likeApi.isLoading){
+                                                        ProgressView()
+                                                            .onDisappear{
+                                                                
+                                                                if(self.likeApi.isApiCallDone && self.likeApi.isApiCallSuccessful){
+                                                                    
+                                                                    
+                                                                    if(self.likeApi.likeSuccessful){
+                                                                        self.like = false
+                                                                        self.unlike = true
+                                                                        self.likePressed = 0
+
+                                                                        
+                                                                        self.toastMessage = "DisLike Successfully"
+                                                                        self.showToast = true
+                                                                    }
+                                                                    else{
+                                                                        
+                                                                        
+                                                                        self.toastMessage = "Unable to dislike"
+                                                                        self.showToast = true
+                                                                        self.likePressed = 0
+
+                                                                    }
+                                                                }
+                                                                else if(self.likeApi.isApiCallDone && (!self.likeApi.isApiCallSuccessful)){
+                                                                    self.toastMessage = "Unable to access internet. Please check you internet connection and try again."
+                                                                    self.showToast = true
+                                                                }
+                                                                
+                                                            }
+                                                    }
+                                                }
                                                 
-                                                
-                                                Image(systemName: "multiply")
-                                                    .resizable()
-                                                    .aspectRatio(contentMode: .fit)
-                                                    .frame(width: 20, height: 20)
-                                                    .foregroundColor(.white)
-                                                    .padding()
-                                                    .background(Circle().fill(.black))
+                                                else{
+                                                    Button(action: {
+                                                        self.likePressed = 1
+                                                        
+                                                        self.likeApi.registerUser(forId: self.getAllUsers.apiResponse!.docs[index]._id, like: false)
+                                                        
+                                                        
+                                                    }, label: {
+                                                        Image(systemName: "multiply")
+                                                            .resizable()
+                                                            .aspectRatio(contentMode: .fit)
+                                                            .frame(width: 20, height: 20)
+                                                            .foregroundColor(.white)
+                                                            .padding()
+                                                            .background(Circle().fill(self.unlike ? Color.black.opacity(0.5)  : .black  ))
+                                                    })
+                                                    .disabled(self.unlike)
+
+                                                }
+
+                                               
                                                 
                                                 Spacer()
+                                                
+                                                if(self.likePressed == 2){
+                                                    if(self.likeApi.isLoading){
+                                                        ProgressView()
+                                                            .onDisappear{
+                                                                
+                                                                if(self.likeApi.isApiCallDone && self.likeApi.isApiCallSuccessful){
+                                                                    
+                                                                    
+                                                                    if(self.likeApi.likeSuccessful){
+                                                                        self.like = true
+                                                                        self.unlike = false
+                                                                        self.likePressed = 0
 
-                                                Image(systemName: "heart")
-                                                    .resizable()
-                                                    .aspectRatio(contentMode: .fit)
-                                                    .frame(width: 20, height: 20)
-                                                    .foregroundColor(.white)
-                                                    .padding()
-                                                    .background(Circle().fill(AppColors.pinkMainColor))
+                                                                        
+                                                                        self.toastMessage = "Like Successfully"
+                                                                        self.showToast = true
+                                                                    }
+                                                                    else{
+                                                                        
+                                                                        
+                                                                        self.toastMessage = "Unable to like"
+                                                                        self.showToast = true
+                                                                    }
+                                                                }
+                                                                else if(self.likeApi.isApiCallDone && (!self.likeApi.isApiCallSuccessful)){
+                                                                    self.toastMessage = "Unable to access internet. Please check you internet connection and try again."
+                                                                    self.showToast = true
+                                                                }
+                                                                
+                                                            }
+                                                    }
+                                                }
+                                                
+                                                else{
+                                                    
+                                                    Button(action: {
+                                                        self.likePressed = 2
+
+                                                        self.likeApi.registerUser(forId: self.getAllUsers.apiResponse!.docs[index]._id, like: true)
+                                                    }, label: {
+                                                        Image(systemName: "heart")
+                                                            .resizable()
+                                                            .aspectRatio(contentMode: .fit)
+                                                            .frame(width: 20, height: 20)
+                                                            .foregroundColor(.white)
+                                                            .padding()
+                                                            .background(Circle().fill(self.like ? AppColors.pinkMainColor.opacity(0.5) : AppColors.pinkMainColor))
+                                                    })
+                                                    .disabled(self.like)
+                                                }
+                                               
                                                 
                                                 Spacer()
 
@@ -338,7 +443,9 @@ struct HomeScreen: View {
                 
             }
 
-           
+            if(showToast){
+                Toast(isShowing: self.$showToast, message: self.toastMessage)
+            }
             
             
         }

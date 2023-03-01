@@ -32,6 +32,18 @@
 		596BA51E299F503F009784A7 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596BA51D299F503F009784A7 /* ProfileScreen.swift */; };
 		596BA520299F52A5009784A7 /* SeekBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596BA51F299F52A4009784A7 /* SeekBar.swift */; };
 		596BA522299F5740009784A7 /* MainTabContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596BA521299F5740009784A7 /* MainTabContainer.swift */; };
+		5989950C29AF31E2007DB413 /* LikeUnlikeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5989950B29AF31E2007DB413 /* LikeUnlikeResponseModel.swift */; };
+		5989950E29AF32EC007DB413 /* LikeUnlikeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5989950D29AF32EC007DB413 /* LikeUnlikeApi.swift */; };
+		5989951429AF4E63007DB413 /* AddProfileDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5989951129AF4E63007DB413 /* AddProfileDataResponseModel.swift */; };
+		5989951529AF4E63007DB413 /* AddProfileDataApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5989951329AF4E63007DB413 /* AddProfileDataApi.swift */; };
+		5989952529AF5065007DB413 /* VerifyOTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5989951829AF5065007DB413 /* VerifyOTPResponseModel.swift */; };
+		5989952629AF5065007DB413 /* VerifyOTPApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5989951A29AF5065007DB413 /* VerifyOTPApi.swift */; };
+		5989952729AF5066007DB413 /* NewPasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5989951D29AF5065007DB413 /* NewPasswordResponseModel.swift */; };
+		5989952829AF5066007DB413 /* NewPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5989951F29AF5065007DB413 /* NewPasswordApi.swift */; };
+		5989952929AF5066007DB413 /* SendResetPasswordOTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5989952229AF5065007DB413 /* SendResetPasswordOTPResponseModel.swift */; };
+		5989952A29AF5066007DB413 /* SendResetPasswordOTPApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5989952429AF5065007DB413 /* SendResetPasswordOTPApi.swift */; };
+		5989952C29AF514A007DB413 /* LogoutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5989952B29AF514A007DB413 /* LogoutScreen.swift */; };
+		5989952E29AF55FA007DB413 /* Create Profile Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5989952D29AF55FA007DB413 /* Create Profile Screen.swift */; };
 		5991740D29ADCA9100899518 /* NetworkConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991740C29ADCA9100899518 /* NetworkConfigs.swift */; };
 		5991741329ADCB2300899518 /* RegisterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991741229ADCB2300899518 /* RegisterApi.swift */; };
 		5991741729ADCB6A00899518 /* RegisterResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991741629ADCB6A00899518 /* RegisterResponseModel.swift */; };
@@ -82,6 +94,18 @@
 		596BA51D299F503F009784A7 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		596BA51F299F52A4009784A7 /* SeekBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeekBar.swift; sourceTree = "<group>"; };
 		596BA521299F5740009784A7 /* MainTabContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabContainer.swift; sourceTree = "<group>"; };
+		5989950B29AF31E2007DB413 /* LikeUnlikeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeUnlikeResponseModel.swift; sourceTree = "<group>"; };
+		5989950D29AF32EC007DB413 /* LikeUnlikeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeUnlikeApi.swift; sourceTree = "<group>"; };
+		5989951129AF4E63007DB413 /* AddProfileDataResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProfileDataResponseModel.swift; sourceTree = "<group>"; };
+		5989951329AF4E63007DB413 /* AddProfileDataApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProfileDataApi.swift; sourceTree = "<group>"; };
+		5989951829AF5065007DB413 /* VerifyOTPResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyOTPResponseModel.swift; sourceTree = "<group>"; };
+		5989951A29AF5065007DB413 /* VerifyOTPApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyOTPApi.swift; sourceTree = "<group>"; };
+		5989951D29AF5065007DB413 /* NewPasswordResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPasswordResponseModel.swift; sourceTree = "<group>"; };
+		5989951F29AF5065007DB413 /* NewPasswordApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPasswordApi.swift; sourceTree = "<group>"; };
+		5989952229AF5065007DB413 /* SendResetPasswordOTPResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendResetPasswordOTPResponseModel.swift; sourceTree = "<group>"; };
+		5989952429AF5065007DB413 /* SendResetPasswordOTPApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendResetPasswordOTPApi.swift; sourceTree = "<group>"; };
+		5989952B29AF514A007DB413 /* LogoutScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutScreen.swift; sourceTree = "<group>"; };
+		5989952D29AF55FA007DB413 /* Create Profile Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Profile Screen.swift"; sourceTree = "<group>"; };
 		5991740C29ADCA9100899518 /* NetworkConfigs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConfigs.swift; sourceTree = "<group>"; };
 		5991741229ADCB2300899518 /* RegisterApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterApi.swift; sourceTree = "<group>"; };
 		5991741629ADCB6A00899518 /* RegisterResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterResponseModel.swift; sourceTree = "<group>"; };
@@ -230,6 +254,131 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		5989950829AF31B5007DB413 /* Like Unlike Api */ = {
+			isa = PBXGroup;
+			children = (
+				5989950A29AF31CB007DB413 /* Api */,
+				5989950929AF31C3007DB413 /* Model */,
+			);
+			path = "Like Unlike Api";
+			sourceTree = "<group>";
+		};
+		5989950929AF31C3007DB413 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5989950B29AF31E2007DB413 /* LikeUnlikeResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5989950A29AF31CB007DB413 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5989950D29AF32EC007DB413 /* LikeUnlikeApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		5989950F29AF4E63007DB413 /* Add Profile Data Api */ = {
+			isa = PBXGroup;
+			children = (
+				5989951029AF4E63007DB413 /* Models */,
+				5989951229AF4E63007DB413 /* Api */,
+			);
+			path = "Add Profile Data Api";
+			sourceTree = "<group>";
+		};
+		5989951029AF4E63007DB413 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5989951129AF4E63007DB413 /* AddProfileDataResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5989951229AF4E63007DB413 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5989951329AF4E63007DB413 /* AddProfileDataApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		5989951629AF5065007DB413 /* Verify OTP Api */ = {
+			isa = PBXGroup;
+			children = (
+				5989951729AF5065007DB413 /* Model */,
+				5989951929AF5065007DB413 /* Api */,
+			);
+			path = "Verify OTP Api";
+			sourceTree = "<group>";
+		};
+		5989951729AF5065007DB413 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5989951829AF5065007DB413 /* VerifyOTPResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5989951929AF5065007DB413 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5989951A29AF5065007DB413 /* VerifyOTPApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		5989951B29AF5065007DB413 /* New Password Api */ = {
+			isa = PBXGroup;
+			children = (
+				5989951C29AF5065007DB413 /* Model */,
+				5989951E29AF5065007DB413 /* Api */,
+			);
+			path = "New Password Api";
+			sourceTree = "<group>";
+		};
+		5989951C29AF5065007DB413 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5989951D29AF5065007DB413 /* NewPasswordResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5989951E29AF5065007DB413 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5989951F29AF5065007DB413 /* NewPasswordApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		5989952029AF5065007DB413 /* Send Reset Password Api */ = {
+			isa = PBXGroup;
+			children = (
+				5989952129AF5065007DB413 /* Model */,
+				5989952329AF5065007DB413 /* Api */,
+			);
+			path = "Send Reset Password Api";
+			sourceTree = "<group>";
+		};
+		5989952129AF5065007DB413 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5989952229AF5065007DB413 /* SendResetPasswordOTPResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5989952329AF5065007DB413 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5989952429AF5065007DB413 /* SendResetPasswordOTPApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		5991740B29ADCA9100899518 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +390,11 @@
 		5991740E29ADCA9400899518 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				5989951B29AF5065007DB413 /* New Password Api */,
+				5989952029AF5065007DB413 /* Send Reset Password Api */,
+				5989951629AF5065007DB413 /* Verify OTP Api */,
+				5989950F29AF4E63007DB413 /* Add Profile Data Api */,
+				5989950829AF31B5007DB413 /* Like Unlike Api */,
 				5951DDE829AE01D000F5E440 /* Get User Detail Api */,
 				5951DDE129ADFD4E00F5E440 /* Get Profile Api */,
 				5951DDDA29ADE42800F5E440 /* Get All Users Api */,
@@ -357,6 +511,8 @@
 				595BF3B129A33F64009089A6 /* EditProfileScreen.swift */,
 				595BF3B529A35297009089A6 /* MessageScreen.swift */,
 				595BF3C829A35C4D009089A6 /* SingleChatScreen.swift */,
+				5989952B29AF514A007DB413 /* LogoutScreen.swift */,
+				5989952D29AF55FA007DB413 /* Create Profile Screen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -442,17 +598,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5989951429AF4E63007DB413 /* AddProfileDataResponseModel.swift in Sources */,
 				5951DDDF29ADE42800F5E440 /* GetAllUsersResponseModel.swift in Sources */,
 				59D9DA6E299DF46F000C2B82 /* PinkButton.swift in Sources */,
 				595BF3B629A35297009089A6 /* MessageScreen.swift in Sources */,
 				5991741329ADCB2300899518 /* RegisterApi.swift in Sources */,
+				5989952829AF5066007DB413 /* NewPasswordApi.swift in Sources */,
 				59D9DA63299DEF17000C2B82 /* AppColors.swift in Sources */,
+				5989952729AF5066007DB413 /* NewPasswordResponseModel.swift in Sources */,
 				59D9DA64299DEF17000C2B82 /* AppImages.swift in Sources */,
 				595BF3C129A35B7F009089A6 /* AppData.swift in Sources */,
 				59D9DAD4299E18BB000C2B82 /* LoginSwicher.swift in Sources */,
 				596BA522299F5740009784A7 /* MainTabContainer.swift in Sources */,
 				59552390299E589A007E5D62 /* HomeScreen.swift in Sources */,
 				59D9DAD0299DFE5A000C2B82 /* SignupScreen.swift in Sources */,
+				5989950C29AF31E2007DB413 /* LikeUnlikeResponseModel.swift in Sources */,
+				5989952629AF5065007DB413 /* VerifyOTPApi.swift in Sources */,
 				595BF3B429A34830009089A6 /* ImagePicker.swift in Sources */,
 				5951DDF329AE01D100F5E440 /* GetUserDetailsApi.swift in Sources */,
 				596BA51E299F503F009784A7 /* ProfileScreen.swift in Sources */,
@@ -465,12 +626,15 @@
 				59D9DACE299DF8A8000C2B82 /* OnboardingScreen.swift in Sources */,
 				5991741C29ADD12900899518 /* Toast.swift in Sources */,
 				5951DDD929ADDBF000F5E440 /* LoginApi.swift in Sources */,
+				5989952A29AF5066007DB413 /* SendResetPasswordOTPApi.swift in Sources */,
 				5955238C299E36D6007E5D62 /* OtpVerificationScreen.swift in Sources */,
 				595BF3C729A35B7F009089A6 /* NullEncodeable.swift in Sources */,
 				5955238A299E2CDB007E5D62 /* PhoneRegisrationScreen.swift in Sources */,
 				5951DDD829ADDBF000F5E440 /* LoginResponseModel.swift in Sources */,
 				59624349299F90370007481C /* UserProfileDetailScreen.swift in Sources */,
 				5951DDF229AE01D100F5E440 /* GetUserDetailsResponseModel.swift in Sources */,
+				5989951529AF4E63007DB413 /* AddProfileDataApi.swift in Sources */,
+				5989952E29AF55FA007DB413 /* Create Profile Screen.swift in Sources */,
 				59D9DA66299DEF17000C2B82 /* ImageViewer.swift in Sources */,
 				595BF3C629A35B7F009089A6 /* AudioRecorder.swift in Sources */,
 				5951DDE729ADFD4F00F5E440 /* getProfileApi.swift in Sources */,
@@ -478,11 +642,15 @@
 				5991740D29ADCA9100899518 /* NetworkConfigs.swift in Sources */,
 				5951DDE629ADFD4E00F5E440 /* getProfileResponseModel.swift in Sources */,
 				59D9DA65299DEF17000C2B82 /* Shimmer.swift in Sources */,
+				5989952529AF5065007DB413 /* VerifyOTPResponseModel.swift in Sources */,
 				595BF3C329A35B7F009089A6 /* ShareView.swift in Sources */,
+				5989950E29AF32EC007DB413 /* LikeUnlikeApi.swift in Sources */,
 				5991741729ADCB6A00899518 /* RegisterResponseModel.swift in Sources */,
 				595BF3C929A35C4D009089A6 /* SingleChatScreen.swift in Sources */,
+				5989952929AF5066007DB413 /* SendResetPasswordOTPResponseModel.swift in Sources */,
 				59D9DA51299DEE2F000C2B82 /* Stranger_Chat_AppApp.swift in Sources */,
 				595BF3C029A35B7F009089A6 /* Constants.swift in Sources */,
+				5989952C29AF514A007DB413 /* LogoutScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

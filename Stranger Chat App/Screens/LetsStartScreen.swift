@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LetsStartScreen: View {
+
     var body: some View {
         ZStack{
             
@@ -73,12 +74,12 @@ struct LetsStartScreen: View {
                     .padding(.top,10)
 
                 
-                NavigationLink(destination: {
-                    MainTabContainer()
-                }, label: {
-                    PinkButton(lable: "Lets Start")
-                        .padding(20)
-                })
+//                NavigationLink(destination: {
+//                    MainTabContainer(isUserLoggedIn: self.$isUserLoggedIn)
+//                }, label: {
+//                    PinkButton(lable: "Lets Start")
+//                        .padding(20)
+//                })
               
                 
                Spacer()

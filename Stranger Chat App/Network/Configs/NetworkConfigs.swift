@@ -19,6 +19,16 @@ struct NetworkConfig {
     static let getAllUsers = "user/getAllUsers"
     static let profiles = "user/profiles"
     static let profileById = "user/profileById"
+    static let like = "user/like"
+    static let setupProfile = "user/profiles"
+    static let passwordResetVerify = "user/passwordResetVerify"
+    static let passwordResetOTP = "user/passwordResetOTP"
+    static let resetPassword = "user/resetPassword"
+
+
+    
+
+
 
 
 
